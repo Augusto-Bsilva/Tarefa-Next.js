@@ -1,11 +1,9 @@
-/* components/Footer/styles.module.css */
-
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 270px;
-  gap: 50px;
+  height: 16.875rem;
+  gap: 3.125rem;
   background-color: #333333;
   border-top: 5px solid;
   border-image: linear-gradient(270deg, #2C5680 0%, #DEB959 100%) 1;
@@ -40,7 +38,7 @@
   justify-content: start;
   height: 55%;
   width: 30%;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .enderecos div {
@@ -52,18 +50,18 @@
 .enderecos div p {
   font-weight: 400;
   font-size: 18px; 
-  line-height: 15px;
+  line-height: .9375rem;
   color: #FFFFFF;
 }
 
 .iconImages {
-  height: 19px;
-  width: 19px;
+  height: 1.1875rem;
+  width: 1.1875rem;
 }
 
 .quemSomosBtn {
-  padding: 5px 20px 10px 20px;
-  border-radius: 20px;
+  padding: .3125rem 1.25rem .625rem 1.25rem;
+  border-radius: 1.25rem;
   border: none;
   background: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
   color: white;
