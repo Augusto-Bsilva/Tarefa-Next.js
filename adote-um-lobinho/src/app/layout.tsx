@@ -3,6 +3,7 @@ import Header  from '../components/Header/index';
 import { Metadata } from "next";
 import { Darker_Grotesque } from 'next/font/google';
 import Footer from '../components/Footer/index';
+import { QueryProvider } from "../providers/query"
 
 const darkerGrotesque = Darker_Grotesque({ subsets: ['latin'] });
 
@@ -33,11 +34,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ `${darkerGrotesque.className} min-h-screen flex flex-col` }>
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+      </QueryProvider>
       </body>
     </html>
   );
