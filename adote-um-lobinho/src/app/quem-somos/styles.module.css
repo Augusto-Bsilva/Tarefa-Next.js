@@ -1,0 +1,24 @@
+.who{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex:1;
+  gap:80px;
+}
+
+.whop{
+  font-family: Darker Grotesque;
+  font-size: 24px;
+  font-weight:400;
+  padding-bottom:5.625rem;
+  width:80%;
+  color: black;
+}
+
+.whot{
+  padding-top:4.375rem;
+  font-size:3rem;
+  font-weight:600;
+  color: black;
+}
