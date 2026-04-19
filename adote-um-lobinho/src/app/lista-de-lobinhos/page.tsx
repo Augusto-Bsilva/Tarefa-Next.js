@@ -11,8 +11,11 @@ import WolfCard2 from '@/components/WolfCard2';
 
 
 export default function ListaDeLobinhos(){
+    const [nome, setNome] = useState<string>('')
+    const [busca, setBusca] = useState<string>('')
+    const [adotados, setAdotados] = useState<boolean>(false);
     const [page, setPage] = useState(1);
-    const {data, error, isPending, isError, isSuccess} = useWolfs(page);
+    const {data, error, isPending, isError, isSuccess} = useWolfs(page, adotados,busca);
     const totalPages = data ? Math.ceil(data.totalCount / 4) : 1;
     const maxPageButtons = 5;
     let start = Math.max(1, page -2);
@@ -23,11 +26,17 @@ export default function ListaDeLobinhos(){
     }
     const pageNumbers = Array.from({length: end - start + 1}, (_, i) => start + i);
 
-
-
-
-
-
+    function handleSubmit(e : React.FormEvent<HTMLButtonElement>){
+        e.preventDefault();
+        setBusca(nome)
+    }
+    function handleChange(e : React.ChangeEvent<HTMLInputElement>){
+        e.preventDefault();
+        setNome(e.target.value)
+    }
+    function handleAdoptedChange(e : React.ChangeEvent<HTMLInputElement>){
+        setAdotados(e.target.checked);
+    }
     if (isPending) return <p>Carregando lobinhos...</p>;
     if (isError) return <p className={style.error}>Erro ao carregar lista.</p>;
     return(
@@ -35,14 +44,14 @@ export default function ListaDeLobinhos(){
             <section className={style.search}>
                 <nav className={style.searchBar}>
                     <div className={style.inputPawSet}>
-                        <button className={style.searchPaw}></button>
-                        <input type="text" name="nome" id="bar" className={style.bar}/>
+                        <button className={style.searchPaw} onClick={handleSubmit}></button>
+                        <input type="text" name="nome" id="bar" className={style.bar} value={nome} onChange={handleChange} />
                         <p  className={style.errorCase}></p>
                     </div>
                     <Link href="/adicionar-lobinho" id="add-link" className={style.addLink}><button id="add-lobo" className={style.addLobo}>+ Lobo</button></Link>
                 </nav>
                 <div className={style.adoptedFilter}>
-                    <input type="checkbox" name="check" id="check" className={style.check}/>
+                    <input type="checkbox" name="check" id="check" className={style.check} onChange={handleAdoptedChange}/>
                     <p>Ver lobinhos adotados</p>
                 </div>
             </section>
@@ -53,7 +62,7 @@ export default function ListaDeLobinhos(){
                           lobo.id % 2 === 0 ? <WolfCard2 key={lobo.id} lobo={lobo} /> : <WolfCard key={lobo.id} lobo={lobo} />
                         ))
                     ) : (
-                        <p>Nenhum lobo encontrado.</p>
+                        <p className={style.error}>Nenhum lobo encontrado.</p>
                     )}
                 </ul>
             </section>
