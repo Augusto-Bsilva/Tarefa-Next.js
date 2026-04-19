@@ -11,6 +11,6 @@ export interface ApiHookState<TPayload, TData>{
     reset?: ()=> void;
 }
 
-export type ListState = ApiHookState<void,wolfProps[]>;
+export type ListState = ApiHookState<void,{ wolfs: wolfProps[], totalCount: number }>;
 export type RegisterState = ApiHookState<RegisterRequest, RegisterResponse>
 export type AdoptState = ApiHookState<adoptWolf, RegisterResponse>

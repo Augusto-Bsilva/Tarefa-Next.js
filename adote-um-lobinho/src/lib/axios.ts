@@ -1,6 +1,6 @@
 import axios, { isAxiosError, type AxiosInstance, type AxiosRequestConfig } from "axios";
 import type { HttpAdapter, HttpRequest, HttpResponse } from "../types/http";
-import { baseURL } from "./env";
+import { baseURL } from './env';
 
 class AxiosAdapter implements HttpAdapter{
     private readonly instance: AxiosInstance;

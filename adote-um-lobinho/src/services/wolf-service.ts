@@ -22,7 +22,7 @@ class WolfService extends baseService {
         return this.execute<void, wolfProps[]>({
 
             method:"GET",
-            url: '/lobinhos',
+            url: `/lobinhos?_page=${page}&_limit=${limit}`,
             params: queryParams
         })
     }

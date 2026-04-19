@@ -6,7 +6,7 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "start:api": "json-server --watch lobinhos.json --port 3000"
+    "start:api": "json-server --watch lobinhos.json --port 3333"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.99.0",

@@ -1,11 +1,14 @@
 .wolfListItem{
+
     opacity: 1;
+    
     display: flex;
     gap:130px;
 }
 .square{
     min-width: 430px;
     min-height: 328px;
+
     max-width: 430px;
     width: 100%;
     height: 328px;
@@ -17,6 +20,7 @@
 .wolfImg{
     min-width: 430px;
     min-height: 328px;
+
     max-width: 430px;
     width: 100%;
     height: 328px;
@@ -166,6 +170,7 @@
 .wolfImgRight{
     min-width: 430px;
     min-height: 328px;
+
     max-width: 430px;
     width: 100%;
     height: 328px;
