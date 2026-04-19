@@ -7,8 +7,7 @@ import { useState } from 'react';
 import WolfCard from '@/components/WolfCard';
 import Link from 'next/link';
 import WolfCard2 from '@/components/WolfCard2';
-
-
+export const revalidate = 0;
 
 export default function ListaDeLobinhos(){
     const [nome, setNome] = useState<string>('')
@@ -59,7 +58,7 @@ export default function ListaDeLobinhos(){
                 <ul className={style.wolfIist}>
                     {isSuccess && data && data.wolfs.length > 0 ? (
                         data.wolfs.map((lobo: wolfProps) => (
-                          lobo.id % 2 === 0 ? <WolfCard2 key={lobo.id} lobo={lobo} /> : <WolfCard key={lobo.id} lobo={lobo} />
+                          lobo.id? lobo.id % 2 === 0 ? <WolfCard2 key={lobo.id} lobo={lobo} /> : <WolfCard key={lobo.id} lobo={lobo} /> : null
                         ))
                     ) : (
                         <p className={style.error}>Nenhum lobo encontrado.</p>

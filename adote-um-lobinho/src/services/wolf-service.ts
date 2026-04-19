@@ -44,6 +44,9 @@ class WolfService extends baseService {
         return this.execute<RegisterRequest, RegisterResponse>({
             data,
             method:"POST",
+            headers: {
+            'Content-Type': 'application/json', 
+        },
             url: '/lobinhos'
         })
     }

@@ -1,5 +1,5 @@
 export default interface wolfProps{
-    id: number,
+    id?: number,
     nome: string,
     idade: number,
     descricao: string,
