@@ -46,7 +46,7 @@ export default function ListaDeLobinhos(){
                     <div className={style.inputPawSet}>
                         <button className={style.searchPaw} onClick={handleSubmit}></button>
                         <input type="text" name="nome" id="bar" className={style.bar} value={nome} onChange={handleChange} />
-                        <p  className={style.errorCase}></p>
+                        <p  className={style.error}></p>
                     </div>
                     <Link href="/adicionar-lobinho" id="add-link" className={style.addLink}><button id="add-lobo" className={style.addLobo}>+ Lobo</button></Link>
                 </nav>

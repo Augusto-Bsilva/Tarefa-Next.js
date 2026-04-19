@@ -1,0 +1,156 @@
+.title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: black;
+}
+
+.paragraph {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    color: black;
+}
+
+
+.main {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    padding: 50px;
+}
+
+
+.wolfSection {
+
+
+    width: 80%;
+
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+
+}
+
+
+.imgBtnSide {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.wolfImage img {
+   
+    width: 430px;
+    height: 328px;
+}
+
+.wolfImage div {
+    
+    width: 430px;
+    height: 328px;
+
+    position: absolute;
+    z-index: -1;
+
+    transform: translate(-30px, -30px);
+
+   
+    background-color: #2C5680;
+    border: 4px solid #333333;
+}
+
+
+.btnsDiv {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.btnsDiv button {
+    
+    width: 180px;
+    height: 56px;
+    border: none;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btnAdopt {
+    background-color: #7AAC3A;
+    width: 180px;
+    height: 56px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.destiny{
+
+    background-color: #7AAC3A;
+    width: 180px;
+    height: 56px;
+    border: none;
+  
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btnDelete {
+    background-color: #DE5959;
+    width: 180px;
+    height: 56px;
+    border: none;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.descriptionSide {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
