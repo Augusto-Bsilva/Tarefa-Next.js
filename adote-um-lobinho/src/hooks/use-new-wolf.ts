@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type {  RegisterState } from "../types/state";
 import type {  RegisterRequest, RegisterResponse } from "../types/wolf";
 import { wolfService } from "@/services/wolf-service";
@@ -10,13 +10,16 @@ export function useRegisterWolf(callbacks?: {
 
 }): RegisterState{
 
-    
+    const queryClient = useQueryClient();
     const { data, error, isPending, isError, isSuccess, mutate, reset } = useMutation({
         mutationKey:["register"],
         
         mutationFn: async(data:RegisterRequest)=> 
             wolfService.registerWolf(data).then((res) => res.data),
-            onSuccess: callbacks?.onSuccess,
+            onSuccess: (data) => {
+                queryClient.invalidateQueries({ queryKey: ["wolfs"] });
+                callbacks?.onSuccess?.(data);
+            },
             onError:  callbacks?.onError
     
     })

@@ -22,5 +22,6 @@ export interface RegisterRequest{
     idade: number;
     descricao: string;
     imagem: string;
+    adotado?: boolean;
 }
 export interface RegisterResponse extends wolfProps {}

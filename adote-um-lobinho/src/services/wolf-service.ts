@@ -42,7 +42,10 @@ class WolfService extends baseService {
     }
     public async registerWolf(data: RegisterRequest):Promise<HttpResponse<RegisterResponse>>{
         return this.execute<RegisterRequest, RegisterResponse>({
-            data,
+            data: { 
+                ...data,
+                adotado: false,
+            },
             method:"POST",
             headers: {
             'Content-Type': 'application/json', 
