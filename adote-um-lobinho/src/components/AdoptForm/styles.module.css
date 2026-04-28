@@ -118,3 +118,8 @@
     justify-content: center;
 
 }
+.error {
+    color: rgb(12, 62, 138);
+    font-size: 18px;
+    margin-top: 5px;
+}

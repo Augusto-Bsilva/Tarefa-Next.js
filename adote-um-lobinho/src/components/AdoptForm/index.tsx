@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
     const adoptSchema = z.object({
         
         nomeDono:z.string().nonempty('Insira o nome do lobinho'),
-        idadeDono: z.coerce.number().min(0, 'Insira a idade do lobinho'),
+        idadeDono: z.coerce.number().min(1, 'Insira a idade coreta do lobinho'),
         emailDono: z.string().email('Insira um email válido'),
 
     })

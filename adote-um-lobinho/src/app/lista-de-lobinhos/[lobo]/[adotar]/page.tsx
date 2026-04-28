@@ -13,7 +13,7 @@ export default async function AdotarLobinho({ params }: { params: { lobo: string
       <div className={style.diva1}>
         
           <div className={style.divfoto}>
-              <Image src={loboData.imagem} alt="Foto do Lobinho" width={200} height={200} />
+              <Image src={loboData.imagem} alt="Foto do Lobinho" width={200} height={200} className={style.divfoto}/>
           </div>
           
           <div className={style.divmensagem}>
