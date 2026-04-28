@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import z, { email } from "zod";
 import style from "./styles.module.css"
+import { useRouter } from "next/navigation";
 
     const adoptSchema = z.object({
         
@@ -16,14 +17,16 @@ import style from "./styles.module.css"
     type AdoptFormInput = z.input<typeof adoptSchema>
     type AdoptForm = z.output<typeof adoptSchema>
     export default function AdoptForm({ loboId }: { loboId: string }) {
-         const { register, handleSubmit, reset, formState:{errors, isSubmitting}, setError } = useForm<AdoptFormInput, unknown, AdoptForm>({
+        const router = useRouter();
+        const { register, handleSubmit, reset, formState:{errors, isSubmitting}, setError } = useForm<AdoptFormInput, unknown, AdoptForm>({
             resolver: zodResolver(adoptSchema)
         })
         
         const { execute, isPending } = useAdoptWolf({
         onSuccess: () => {
-          alert("Lobinho adotado com sucesso!");
-          reset();
+            alert("Lobinho adotado com sucesso!");
+            reset();
+            router.push('/lista-de-lobinhos')
         },
         onError: (error) => {
           alert("Erro ao adotar lobinho: " + error.message);
