@@ -16,7 +16,7 @@ class AxiosAdapter implements HttpAdapter{
             data: config.data,
             url: config.url,
             method: config.method,
-            headers: config.headers ?? { "Content-Type": "aplication/json" },
+            headers: config.headers ?? { "Content-Type": "application/json" },
             params: config.params
         }
 

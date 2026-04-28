@@ -23,6 +23,7 @@ export default function AdicionarLobinho() {
     const { execute, isPending } = useRegisterWolf({
     onSuccess: () => {
       alert("Lobinho adicionado com sucesso!");
+      reset();
     },
     onError: (error) => {
       alert("Erro ao adicionar lobinho: " + error.message);
@@ -30,8 +31,7 @@ export default function AdicionarLobinho() {
     });
     const onSubmit = async (data: Lobo) => {
         try {
-            await execute(data);
-            reset();
+           execute(data);
         } catch (error) {
             setError("root", { message: "Erro ao adicionar lobinho" });
         }

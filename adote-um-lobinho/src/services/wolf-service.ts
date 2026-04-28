@@ -26,7 +26,7 @@ class WolfService extends baseService {
             params: queryParams
         })
     }
-    public async adoptWolf(id: string, adotado: boolean, nomeDono: string, idadeDono: number, emailDono: string): Promise<HttpResponse<wolfProps>> {
+    public async adoptWolf(id: number, adotado: boolean, nomeDono: string, idadeDono: number, emailDono: string): Promise<HttpResponse<wolfProps>> {
     return this.execute<{adotado: boolean, nomeDono: string, idadeDono: number, emailDono: string}, wolfProps>({
         method: "PATCH",
         url: `/lobinhos/${id}`,

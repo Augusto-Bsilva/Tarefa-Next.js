@@ -1,0 +1,55 @@
+
+.diva {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 25px;   
+}
+
+.diva1 {
+    /*
+    margin-left: 219px;
+    */
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    padding: 50px 25px 25px 25px;
+}
+
+.divfoto {
+    width: 200px;
+    height: 200px;
+}
+
+/* Div para Mensagens na tela */
+.divmensagem_adote{
+
+    font-weight: 600;
+    font-size: 60px;
+    color: black;
+
+
+}
+.divmensagem_id{
+
+font-weight: 600;
+font-size: 14px;
+    color: black;
+
+
+
+}
+
+/* Imagem do lobo */
+.divfoto img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    object-fit: cover;
+
+
+
+}

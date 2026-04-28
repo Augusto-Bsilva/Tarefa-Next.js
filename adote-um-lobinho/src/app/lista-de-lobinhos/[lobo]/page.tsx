@@ -33,7 +33,7 @@ export default async function LoboPage({ params } : {params: Promise<{lobo: stri
                 </div>
 
                 <div className={style.btnsDiv} id="botoes">
-                    <Link href="/adotar-lobinho" className={style.btnAdopt}  id="adoption-bttn">ADOTAR</Link>
+                    <Link href={`/lista-de-lobinhos/${loboId}/adotar`} className={style.btnAdopt}  id="adoption-bttn">ADOTAR</Link>
                     <form action={deleteWolf}>
                     <button  type='submit' className={style.btnDelete} id= "exclude-bttn">EXCLUIR</button>
                     </form>

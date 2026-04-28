@@ -11,7 +11,7 @@ export default interface wolfProps{
 }
 
 export interface adoptWolf{
-    id: string,
+    id: number,
     adotado: boolean,
     nomeDono: string,
     idadeDono: number,

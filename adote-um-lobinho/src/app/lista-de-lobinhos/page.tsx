@@ -7,7 +7,7 @@ import { useState } from 'react';
 import WolfCard from '@/components/WolfCard';
 import Link from 'next/link';
 import WolfCard2 from '@/components/WolfCard2';
-export const revalidate = 0;
+
 
 export default function ListaDeLobinhos(){
     const [nome, setNome] = useState<string>('')
