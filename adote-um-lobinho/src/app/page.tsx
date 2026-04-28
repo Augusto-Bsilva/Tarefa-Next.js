@@ -6,6 +6,9 @@ import Resgate from '../../public/rescue-dog.png';
 import Protecao from '../../public/life-insurance.png';
 import WolfEx1 from '../../public/image.png';
 import style from './styles.module.css';
+import WolfCard from "@/components/WolfCard";
+import wolfProps from "@/types/wolf";
+import WolfCard2 from "@/components/WolfCard2";
 export const metadata : Metadata={
   title:'Home - Adote um lobinho',
   description:'Projeto de adoção de lobinhos',
@@ -24,7 +27,10 @@ export const metadata : Metadata={
     }
   },
 }
-export default function Home() {
+export default async function Home() {
+    const res = await fetch('http://localhost:3333/lobinhos?_limit=2', {
+    cache: 'no-store'});
+    const lobosExemplo :  wolfProps[] = await res.json();
   return (
     <div>
       <main>
@@ -80,43 +86,15 @@ export default function Home() {
         </section>
         <section className={style.exampleSection}>
           <h2 className={style.subtitle}>Lobos Exemplo</h2>
-          
-          <div className={style.wolfsSection}>
-              <div className={style.wolfCard}>
-                  <div className={style.wolfImageContainer}>
-                      <div className={style.wolfImageBack}></div>
-                      <Image src={WolfEx1} alt="Exemplo de Lobo 1" className={style.wolfImagePic} />
-                  </div>
-                  
-                  <div className={style.wolfInfo}>
-                      <div className={style.wolfInfoHeader}>
-                          <h3 className={style.subSubtitle}>Nome do Lobo</h3>
-                          <p><span>Idade: XX anos</span></p>
-                      </div>
-                      <p className={style.paragraph}>
-                          Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas. Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.
-                      </p>
-                  </div>
-              </div>
-              
-              <div className={style.wolfCard}>
-                  <div className={style.wolfImageContainer}>
-                      <div className={style.wolfImageBack}></div>
-                      <Image src={WolfEx1} alt="Exemplo de Lobo 2" className={style.wolfImagePic} />
-                  </div>
-                  
-                  <div className={style.wolfInfo}>
-                      <div className={style.wolfInfoHeader}>
-                          <h3 className={style.subSubtitle}>Nome do Lobo</h3>
-                          <p><span>Idade: XX anos</span></p>
-                      </div>
-                      <p className={style.paragraph}>
-                          Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas. Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.
-                      </p>
-                  </div>
-              </div>
-            </div>
-        
+            <ul className={style.wolfsSection}>
+              {lobosExemplo.map((lobo, index) => {
+                if(index === 0) {
+                    return <WolfCard key={lobo.id} lobo={lobo} />;
+                } else {
+                    return <WolfCard2 key={lobo.id} lobo={lobo} />;
+                }
+              })}
+            </ul>
         </section>
       </main>
     </div>
